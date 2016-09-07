@@ -8,10 +8,8 @@ import org.gradle.api.tasks.TaskAction
 /**
  * See parameters at http://checkstyle.sourceforge.net/anttask.html
  */
-class AndroidCheckstyleTask extends BaseStatisticTask {
-    public static
-    final String checkstyleClassname = 'com.puppycrawl.tools.checkstyle.ant.CheckstyleAntTask'
-    public static final String configFilePath = 'checkstyle/checkstyle.xml'
+abstract class AndroidCheckstyleTask extends BaseStatisticTask {
+    public static final String checkstyleClassname = 'com.puppycrawl.tools.checkstyle.ant.CheckstyleAntTask'
 
     @InputFile
     @Optional
@@ -26,10 +24,7 @@ class AndroidCheckstyleTask extends BaseStatisticTask {
         return "checkstyle/checkstyle-html.xsl"
     }
 
-    @Override
-    String getOutputPath() {
-        return "$project.buildDir/reports/checkstyle/checkstyle-result.xml"
-    }
+    abstract String getConfigPath();
 
     def AndroidCheckstyleTask() {
         description = 'Runs checkstyle against Android sourcesets.'
@@ -39,7 +34,7 @@ class AndroidCheckstyleTask extends BaseStatisticTask {
     @TaskAction
     def runCheckstyle() {
         prepareTaskFiles()
-        configFile = getFileFromConfigCache(configFilePath)
+        configFile = getFileFromConfigCache(getConfigPath())
 
         def antBuilder = services.get(IsolatedAntBuilder)
         antBuilder.withClasspath(checkstyleClasspath).execute {

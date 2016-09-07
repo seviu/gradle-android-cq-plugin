@@ -20,7 +20,9 @@ public class AndroidCQPlugin implements Plugin<Project> {
         project.dependencies.add('codequality', 'pmd:pmd:4.3')
 
         project.task('findbugs', type: AndroidFindBugsTask)
-        project.task('checkstyle', type: AndroidCheckstyleTask)
+        project.task('checkstyle', type: AndroidCheckstyleDefaultTask)
+        project.task('google_checkstyle', type: AndroidCheckstyleGoogleTask)
+        project.task('square_checkstyle', type: AndroidCheckstyleSquareTask)
         project.task('pmd', type: AndroidPmdTask)
         project.task('cpd', type: AndroidCpdTask)
     }
