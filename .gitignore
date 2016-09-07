@@ -1,16 +1,7 @@
 *.class
-
 .idea/
 *.iml
-
 build/
 .gradle/
-/gradle-android-cq-plugin/local.properties
-/gradle-android-cq-plugin/gradlew
-/gradle-android-cq-plugin/gradle/wrapper/gradle-wrapper.properties
-/gradlew
-/build.gradle
-/gradlew.bat
-/gradle
 /local.properties
-/gradle-android-cq-plugin/gradle/wrapper/gradle-wrapper.jar
+/gradle-android-cq-plugin/local.properties
