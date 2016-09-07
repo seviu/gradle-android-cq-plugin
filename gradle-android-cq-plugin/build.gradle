@@ -1,18 +1,4 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5' // Add this line
-    }
-}
-
-group = 'com.github.seviu'
-version = '0.1.8'
-
 apply plugin: 'groovy'
-apply plugin: 'maven'
-apply plugin: 'nexus'
 apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.seviu'
 
@@ -43,41 +29,3 @@ uploadArchives {
         pom.artifactId = 'gradle-android-cq-plugin'
     }
 }
-
-modifyPom {
-    project {
-        name 'Gradle Android CodeQuality Plugin'
-        description "A Gradle plugin which added tasks for checking java code quality for android projects"
-        url 'https://github.com/seviu/gradle-android-cq-plugin'
-        inceptionYear '2013'
-
-        scm {
-            url 'https://github.com/seviu/gradle-android-cq-plugin'
-            connection 'scm:git:git://github.com/seviu/gradle-android-cq-plugin.git'
-            developerConnection 'scm:git:ssh://git@github.com:seviu/gradle-android-cq-plugin.git'
-        }
-
-        licenses {
-            license {
-                name 'The Apache Software License, Version 2.0'
-                url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                distribution 'repo'
-            }
-        }
-
-        developers {
-            developer {
-                id 'nrudenko'
-                name 'Nikolay Rudenko'
-                email 'r.nikolay.e@gmail.com'
-            }
-            developer {
-                id 'seviu'
-                name 'Sebastian Vieira'
-                email 'vieira@gmail.com'
-            }
-
-        }
-    }
-}
-
