@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'org.gradle.api.plugins:gradle-nexus-plugin:0.3'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5' // Add this line
     }
 }
 
@@ -13,6 +13,8 @@ version = '0.1.8'
 apply plugin: 'groovy'
 apply plugin: 'maven'
 apply plugin: 'nexus'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.seviu'
 
 dependencies {
     repositories {
@@ -20,6 +22,14 @@ dependencies {
     }
     compile gradleApi()
     compile localGroovy()
+}
+
+repositories {
+    jcenter()
+    maven { url "https://jitpack.io" }
+}
+dependencies {
+    compile 'com.github.jitpack:gradle-simple:1.0'
 }
 
 install {
