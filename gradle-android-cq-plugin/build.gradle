@@ -7,8 +7,8 @@ buildscript {
     }
 }
 
-group = 'com.github.nrudenko'
-version = '0.1.7'
+group = 'com.github.seviu'
+version = '0.1.8'
 
 apply plugin: 'groovy'
 apply plugin: 'maven'
@@ -38,13 +38,13 @@ modifyPom {
     project {
         name 'Gradle Android CodeQuality Plugin'
         description "A Gradle plugin which added tasks for checking java code quality for android projects"
-        url 'https://github.com/nrudenko/gradle-android-cq-plugin'
+        url 'https://github.com/seviu/gradle-android-cq-plugin'
         inceptionYear '2013'
 
         scm {
-            url 'https://github.com/nrudenko/gradle-android-cq-plugin'
-            connection 'scm:git:git://github.com/nrudenko/gradle-android-cq-plugin.git'
-            developerConnection 'scm:git:ssh://git@github.com:nrudenko/gradle-android-cq-plugin.git'
+            url 'https://github.com/seviu/gradle-android-cq-plugin'
+            connection 'scm:git:git://github.com/seviu/gradle-android-cq-plugin.git'
+            developerConnection 'scm:git:ssh://git@github.com:seviu/gradle-android-cq-plugin.git'
         }
 
         licenses {
@@ -61,6 +61,12 @@ modifyPom {
                 name 'Nikolay Rudenko'
                 email 'r.nikolay.e@gmail.com'
             }
+            developer {
+                id 'seviu'
+                name 'Sebastian Vieira'
+                email 'vieira@gmail.com'
+            }
+
         }
     }
 }
