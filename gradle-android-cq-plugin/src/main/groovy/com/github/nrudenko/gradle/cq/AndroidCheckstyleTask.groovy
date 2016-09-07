@@ -10,7 +10,7 @@ import org.gradle.api.tasks.TaskAction
  */
 class AndroidCheckstyleTask extends BaseStatisticTask {
     public static
-    final String checkstyleClassname = 'com.puppycrawl.tools.checkstyle.CheckStyleTask'
+    final String checkstyleClassname = 'com.puppycrawl.tools.checkstyle.ant.CheckstyleAntTask'
     public static final String configFilePath = 'checkstyle/checkstyle.xml'
 
     @InputFile
