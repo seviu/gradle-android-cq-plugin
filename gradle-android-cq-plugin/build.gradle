@@ -9,23 +9,3 @@ dependencies {
     compile gradleApi()
     compile localGroovy()
 }
-
-repositories {
-    jcenter()
-    maven { url "https://jitpack.io" }
-}
-dependencies {
-    compile 'com.github.jitpack:gradle-simple:1.0'
-}
-
-install {
-    repositories.mavenInstaller {
-        pom.artifactId = 'gradle-android-cq-plugin'
-    }
-}
-
-uploadArchives {
-    repositories.mavenDeployer {
-        pom.artifactId = 'gradle-android-cq-plugin'
-    }
-}
