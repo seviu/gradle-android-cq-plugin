@@ -65,6 +65,8 @@ class AndroidFindBugsTask extends BaseStatisticTask {
                 "class"(location: "$gradleProject.buildDir/intermediates/classes")
             }
 
+            makeHtml(ant)
+
             if (ant.project.properties[errorProp]) {
                 throw new GradleException("FindBugs encountered an error. Run with --debug to get more information.")
             }
@@ -76,8 +78,6 @@ class AndroidFindBugsTask extends BaseStatisticTask {
                     throw new GradleException("FindBugs rule violations were found.")
                 }
             }
-
-            makeHtml(ant)
         }
     }
 }
