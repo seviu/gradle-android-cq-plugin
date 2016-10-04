@@ -66,18 +66,6 @@ class AndroidFindBugsTask extends BaseStatisticTask {
             }
 
             makeHtml(ant)
-
-            if (ant.project.properties[errorProp]) {
-                throw new GradleException("FindBugs encountered an error. Run with --debug to get more information.")
-            }
-
-            if (ant.project.properties[warningsProp] && !ignoreFailures) {
-                if (outputFile) {
-                    throw new GradleException("FindBugs rule violations were found. See the report at ${outputFile}.")
-                } else {
-                    throw new GradleException("FindBugs rule violations were found.")
-                }
-            }
         }
     }
 }
